@@ -1,4 +1,4 @@
-describe "BankAccount" do 
+describe "BankAccount" do
 
   let(:avi) { BankAccount.new("Avi") }
 
@@ -18,17 +18,17 @@ describe "BankAccount" do
     expect(avi.status).to eq("open")
   end
 
-  it "can't change its name" do 
+  it "can't change its name" do
     expect { avi.name = "Bob" }.to raise_error
   end
 
-  it "can deposit money into its account" do 
+  it "can deposit money into its account" do
     expect(avi.balance).to eq(1000)
     avi.deposit(1000)
     expect(avi.balance).to eq(2000)
   end
 
-  it "can display its balance" do 
+  it "can display its balance" do
     expect(avi.display_balance).to eq("Your Balance is $#{avi.balance}.")
   end
 
@@ -42,7 +42,7 @@ describe "BankAccount" do
     expect(@closed.valid?).to eq(false)
   end
 
-  it "can close its account" do 
+  it "can close its account" do
     avi.close_account
     expect(avi.status).to eq("closed")
   end
